@@ -1,29 +1,37 @@
 package com.example.edu
 
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.collections.HashSet
 
 
-fun makeLottoNumbers(buyCount: Int): HashSet<Int> {
+fun makeLottoNumbers(buyCount: Int): ArrayList<Int> {
     val random = Random()
-    val ranDomNumSet: HashSet<Int> = HashSet()
-   
-    while(ranDomNumSet.size< buyCount*6)
-          ranDomNumSet.add(random.nextInt(45)+1)
+    val randDomSet: TreeSet<Int> = TreeSet()
+    var lottoNumbers = arrayListOf<Int>()
 
-    return ranDomNumSet
+    for(i in 0 until buyCount) {
+        while (randDomSet.size <  6) {
+            randDomSet.add(random.nextInt(45) + 1)
+        }
+        randDomSet.forEach { item ->
+            lottoNumbers.add(item)
+        }
+        randDomSet.clear()
+    }
+    return lottoNumbers
 }
 
-fun printLottoNumbers(lottoNumSet : HashSet<Int>) :Unit{
+fun printLottoNumbers(lottoNumbers : ArrayList<Int>) :Unit{
     var count : Int =0
 
-    lottoNumSet.forEach {
+    lottoNumbers.forEach { num->
         count++
-        if(it<10)
-            print("0${it} ")
+        if(num<10)
+            print("0${num} ")
         else
-            print("$it ")
-
+            print("$num ")
+                          
         if(count%6===0)
             print("\n")
     }
