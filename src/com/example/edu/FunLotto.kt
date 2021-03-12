@@ -16,7 +16,6 @@ fun makeLottoNumbers(buyCount: Int): HashSet<Int> {
 
 fun printLottoNumbers(lottoNumSet : HashSet<Int>) :Unit{
     var count : Int =0
-    var num : Int
 
     lottoNumSet.forEach {
         count++
