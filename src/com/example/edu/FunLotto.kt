@@ -7,10 +7,9 @@ import kotlin.collections.HashSet
 fun makeLottoNumbers(buyCount: Int): HashSet<Int> {
     val random = Random()
     val ranDomNumSet: HashSet<Int> = HashSet()
-    for(i in 0 until buyCount){
-        while(ranDomNumSet.size< buyCount*6)
-              ranDomNumSet.add(random.nextInt(45)+1)
-        }
+   
+    while(ranDomNumSet.size< buyCount*6)
+          ranDomNumSet.add(random.nextInt(45)+1)
 
     return ranDomNumSet
 }
