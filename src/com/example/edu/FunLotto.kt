@@ -9,7 +9,7 @@ fun makeLottoNumbers(buyCount: Int): HashSet<Int> {
     val ranDomNumSet: HashSet<Int> = HashSet()
     for(i in 0 until buyCount){
         while(ranDomNumSet.size< buyCount*6)
-              ranDomNumSet.add(random.nextInt(1 - 46));
+              ranDomNumSet.add(random.nextInt(45)+1)
         }
 
     return ranDomNumSet
